@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="sg-a">
+  
+    <link name="quick_change_robot_side">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="gripper">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://onrobot_sg_a/../common/Quick_Changer_Robot Side_v2.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="191,191,191"/>
+      </visual>
+    </link>
+    
+    <link name="gripper">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="gripper">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://onrobot_sg_a/meshes/SG-a_v1.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="191,191,191"/>
+      </visual>
+    </link>
+    
+    
+   <joint name="quick_changer_to_gripper" type="fixed">
+      <origin xyz="-0.0055 -.024 0.0075" rpy="0 0 -1.5708"/>
+      <parent link="quick_change_robot_side"/>
+      <child link="gripper"/>
+    </joint>
+
+  </robot>
