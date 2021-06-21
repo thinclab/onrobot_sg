@@ -7,13 +7,19 @@
         <mass value="0.001"/>
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
-      <visual name="gripper">
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+      <visual>
+        <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
         <geometry>
-          <mesh filename="package://onrobot_sg_b/../common/Quick_Changer_Robot Side_v2.dae" scale="1 1 1"/>
+          <mesh filename="package://onrobot_sg/models/common/Quick_Changer_Robot Side_v2.dae" scale="1 1 1"/>
         </geometry>
         <material name="191,191,191"/>
       </visual>
+      <collision>
+        <origin xyz="0 0 0.008" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.015" radius="0.036"/>
+        </geometry>
+      </collision>
     </link>
     
 
@@ -24,17 +30,22 @@
         <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
       </inertial>
       <visual name="gripper">
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0.0075 0.0055 0 " rpy="3.1415 -1.5708 0"/>
         <geometry>
-          <mesh filename="package://onrobot_sg_b/meshes/SG-b_v1.dae" scale="1 1 1"/>
+          <mesh filename="package://onrobot_sg/models/onrobot_sg_b/meshes/SG-b_v1.dae" scale="1 1 1"/>
         </geometry>
         <material name="191,191,191"/>
       </visual>
+      <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.115" radius="0.049"/>
+        </geometry>
+      </collision>
     </link>
     
-    
    <joint name="quick_changer_to_gripper" type="fixed">
-      <origin xyz="-0.0055 -.024 0.0075" rpy="0 0 -1.5708"/>
+      <origin xyz="0 0 0.024" rpy="0 0 0"/>      
       <parent link="quick_change_robot_side"/>
       <child link="gripper"/>
     </joint>
